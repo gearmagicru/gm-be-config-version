@@ -1,0 +1,68 @@
+<div class="row-fluid g-frame-title">
+    <h1><?= $translate('System version information') ?></h1>
+</div>
+
+<?php if ($version) : ?>
+<div class="row-fluid">
+    <div class="col-md-12">
+        <h2><?= $translate('Web application'), ' &laquo;', ($language->isRu() ? $version->originalName : $version->name), '&raquo;' ?></h2>
+        <?php if ($version->code) : ?>
+        <p><?= '<label>', $translate('Short name'), ':<label> ', $version->code ?></p>
+        <?php endif ?>
+        <?php if ($version->number) : ?>
+        <p><?= '<label>', $translate('Version'), ':<label> ', $version->number ?></p>
+        <?php endif ?>
+        <?php if ($version->date) : ?>
+        <p><?= '<label>', $translate('Release date'), ':<label> ', $version->date ?></p>
+        <?php endif ?>
+        <?php if ($version->resource) : ?>
+        <p><label><?= $translate('Details') ?>:</label> <a href="<?= $version->resource ?>" target="_blank"><?= $version->resource ?></a></p>
+        <?php endif ?>
+    </div>
+</div>
+<?php endif ?>
+
+<?php if ($edition) : ?>
+<div class="row-fluid">
+    <div class="col-md-12">
+        <h2><?= $translate('Edition'), ' &laquo;', ($language->isRu() ? $edition->originalName : $edition->name), '&raquo;' ?></h2>
+        <?php if ($edition->code) : ?>
+        <p><?= '<label>', $translate('Short name'), ':<label> ', $edition->code ?></p>
+        <?php endif ?>
+        <?php if ($edition->number) : ?>
+        <p><?= '<label>', $translate('Version'), ':<label> ', $edition->number ?></p>
+        <?php endif ?>
+        <?php if ($edition->date) : ?>
+        <p><?= '<label>', $translate('Release date'), ':<label> ', $edition->date ?></p>
+        <?php endif ?>
+        <?php if ($edition->resource) : ?>
+        <p><label><?= $translate('Details') ?>:</label> <a href="<?= $edition->resource ?>" target="_blank"><?= $edition->resource ?></a></p>
+        <?php endif ?>
+    </div>
+</div>
+<?php endif ?>
+
+<?php if ($panel) : ?>
+<div class="row-fluid">
+    <div class="col-md-12">
+        <h2><?=  $translate('Control panel'), ' &laquo;', $panel->name, '&raquo;' ?></h2>
+        <?php if ($panel->number) : ?>
+        <p><?= '<label>', $translate('Version'), ':<label> ', $panel->number ?></p>
+        <?php endif ?>
+        <?php if ($panel->date) : ?>
+        <p><?= '<label>', $translate('Release date'), ':<label> ', $panel->date ?></p>
+        <?php endif ?>
+        <?php if ($panel->resource) : ?>
+        <p><label><?= $translate('Details') ?>:</label> <a href="<?= $panel->resource ?>" target="_blank"><?= $panel->resource ?></a></p>
+        <?php endif ?>
+    </div>
+</div>
+<?php endif ?>
+
+<div class="row-fluid">
+    <div class="col-md-12">
+        <h2><?= $translate('Framework'), ' &laquo;', Gm::getName(' Framework'), '&raquo;' ?></h2>
+        <p><?= '<label>', $translate('Version'), ':<label> ', Gm::getVersion() ?></p>
+        <p><label><?= $translate('Details') ?>:</label> <a href="https://apps.gearmagic.ru/framework" target="_blank">https://apps.gearmagic.ru/framework</a></p>
+    </div>
+</div>
